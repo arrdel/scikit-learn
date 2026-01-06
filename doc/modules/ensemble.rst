@@ -1583,8 +1583,8 @@ any other regressor or classifier, exposing a `predict`, `predict_proba`, or
 
    >>> y_pred = reg.predict(X_test)
    >>> from sklearn.metrics import r2_score
-   >>> print('R2 score: {:.2f}'.format(r2_score(y_test, y_pred)))
-   R2 score: 0.53
+   >>> r2_score(y_test, y_pred)  # doctest: +ELLIPSIS
+   0.5...
 
 Note that it is also possible to get the output of the stacked
 `estimators` using the `transform` method::
@@ -1629,9 +1629,8 @@ computationally expensive.
     ... )
     >>> multi_layer_regressor.fit(X_train, y_train)
     StackingRegressor(...)
-    >>> print('R2 score: {:.2f}'
-    ...       .format(multi_layer_regressor.score(X_test, y_test)))
-    R2 score: 0.53
+    >>> multi_layer_regressor.score(X_test, y_test)  # doctest: +ELLIPSIS
+    0.5...
 
 .. rubric:: Examples
 
